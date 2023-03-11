@@ -1,0 +1,208 @@
+
+/* ------------------Reset CSS------------------ */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 10px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+.wrapper {
+  min-width: 100%;
+  overflow: hidden;
+  color: rgb(66, 66, 255);
+  font-weight: 700;
+}
+
+.accordeon {
+  max-width: 60vw;
+  margin: 3vh auto;
+}
+
+.accordeon:hover {
+  color:black;
+}
+
+.accordeon h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  color: rgb(66, 66, 255);
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: 700;
+  margin: 1.5rem;
+}
+
+.accordeon-item {
+  border: 0.2rem solid rgb(66, 66, 255);
+  margin: 0.5rem;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.accordeon-item:hover {
+  cursor: pointer;
+  margin: 0.5rem;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.accordeon-title {
+  padding: 1rem 1.5rem;
+  display: block;
+  cursor: pointer;
+  /* background-color:rgb(217, 226, 255); */
+}
+
+.accordeon-title div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordeon-title h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  /* transition: all 0.3s ease-in-out; */
+  /* background-color:rgb(217, 226, 255); */
+}
+
+.accordeon-input {
+  width: 0rem;
+  height: 0rem;
+  display: none;
+}
+
+.accordeon-img {
+  padding: 1rem 1.5rem;
+  display: none;
+}
+
+.accordeon-img div{
+  display: flex;
+  justify-content: center;
+}
+
+.accordeon-input:checked ~ .accordeon-img {
+  display: block;
+}
+
+.accordeon-input:checked ~ .accordeon-title {
+  color:black;
+  background-color: rgb(207, 233, 255);
+}
+
+.accordeon-item:hover > [class^="accordeon"] {
+  display: block;
+}
+
+.img {
+  width: 80%;
+}
+
+.x {
+  background: url(./img/xx.png);
+  height: 2rem;
+  width: 2rem;
+  opacity: 0;
+  background-size: cover;
+  rotate: 45deg;
+}
+
+.accordeon:hover > .accordeon-item > .accordeon-title > div > [class^="x"] {
+  opacity: 1;
+}
+
+.accordeon:hover > .accordeon-item > .accordeon-input:checked ~ .accordeon-title > div > [class^="x"] {
+  opacity: 1;
+  rotate: 0deg;
+}
+
+.accordeon:hover > .accordeon-item:hover > [class^="accordeon"] > div > [class^="x"] {
+  opacity: 1;
+  rotate: 0deg;
+}
