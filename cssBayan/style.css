@@ -25,13 +25,6 @@ a:active {
   outline: none;
 }
 
-nav,
-footer,
-header,
-aside {
-  display: block;
-}
-
 html,
 body {
   height: 100%;
@@ -48,10 +41,6 @@ input,
 button,
 textarea {
   font-family: inherit;
-}
-
-input::-ms-clear {
-  display: none;
 }
 
 button {
@@ -102,10 +91,12 @@ h6 {
 .accordeon {
   max-width: 60vw;
   margin: 3vh auto;
+  transition: color 0.7s ease;
 }
 
 .accordeon:hover {
   color:black;
+  transition: color 0.7s ease;
 }
 
 .accordeon h1 {
@@ -120,22 +111,17 @@ h6 {
 }
 
 .accordeon-item {
-  border: 0.2rem solid rgb(66, 66, 255);
-  margin: 0.5rem;
-  /* transition: all 0.3s ease-in-out; */
+  margin: 0.2rem;
 }
 
 .accordeon-item:hover {
   cursor: pointer;
-  margin: 0.5rem;
-  /* transition: all 0.3s ease-in-out; */
+  margin: 0.2rem;
 }
 
 .accordeon-title {
   padding: 1rem 1.5rem;
-  display: block;
   cursor: pointer;
-  /* background-color:rgb(217, 226, 255); */
 }
 
 .accordeon-title div{
@@ -147,19 +133,17 @@ h6 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  /* transition: all 0.3s ease-in-out; */
-  /* background-color:rgb(217, 226, 255); */
 }
 
 .accordeon-input {
   width: 0rem;
   height: 0rem;
-  display: none;
+  visibility: hidden;
 }
 
 .accordeon-img {
   padding: 1rem 1.5rem;
-  display: none;
+  visibility: hidden;
 }
 
 .accordeon-img div{
@@ -168,20 +152,45 @@ h6 {
 }
 
 .accordeon-input:checked ~ .accordeon-img {
-  display: block;
+  visibility: visible;
 }
 
 .accordeon-input:checked ~ .accordeon-title {
   color:black;
   background-color: rgb(207, 233, 255);
+  transition: background-color 0.5s ease;
+}
+
+.accordeon-input:active ~ .accordeon-title {
+  background-color: rgb(183, 183, 183);
+  color:black;
+  transition: background-color 0.5s ease;
+}
+
+.accordeon-input:active ~ .accordeon-img {
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
 }
 
 .accordeon-item:hover > [class^="accordeon"] {
   display: block;
+  visibility: visible;
+  transition: display 0.7s ease;
+}
+
+.accordeon-item:hover > [class^="accordeon"] > div > .img{
+  width: 20%;
+  transition: width 1.5s ease;
+}
+
+.accordeon-input:checked ~ .accordeon-img > div > .img{
+  width: 60%;
+  transition: width 1.5s ease;
 }
 
 .img {
-  width: 80%;
+  width: 0%;
+  transition: width 1.5s ease;
 }
 
 .x {
@@ -191,18 +200,29 @@ h6 {
   opacity: 0;
   background-size: cover;
   rotate: 45deg;
+  transition: opacity 0.7s ease;
 }
 
 .accordeon:hover > .accordeon-item > .accordeon-title > div > [class^="x"] {
   opacity: 1;
+  transition: opacity 0.7s ease;
 }
 
 .accordeon:hover > .accordeon-item > .accordeon-input:checked ~ .accordeon-title > div > [class^="x"] {
   opacity: 1;
   rotate: 0deg;
+  transition: rotate 0.7s ease;
 }
 
 .accordeon:hover > .accordeon-item:hover > [class^="accordeon"] > div > [class^="x"] {
   opacity: 1;
   rotate: 0deg;
+  transition: rotate 0.7s ease;
 }
+
+hr {
+  border: none;
+  background-color: rgb(183, 183, 183);
+  color: rgb(183, 183, 183);
+  height: 0.3rem; 
+ }
