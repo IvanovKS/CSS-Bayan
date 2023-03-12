@@ -184,7 +184,7 @@ h6 {
 }
 
 .accordeon-input:checked ~ .accordeon-img > div > .img{
-  width: 60%;
+  width: 70%;
   transition: width 1.5s ease;
 }
 
@@ -225,4 +225,177 @@ hr {
   background-color: rgb(183, 183, 183);
   color: rgb(183, 183, 183);
   height: 0.3rem; 
- }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    color: rgb(255, 161, 66);
+  }
+  
+  .accordeon {
+    max-width: 60vw;
+    margin: 2vh auto;
+  }
+  
+  .accordeon:focus {
+    color:black;
+    transition: color 0.7s ease;
+  }
+  
+  .accordeon h1 {
+    font-size: 3.0rem;
+    color: rgb(255, 161, 66);
+  }
+  
+  .accordeon-item:hover {
+    cursor: none;
+  }
+  
+  .accordeon-title {
+    cursor: none;
+  }
+  
+  .accordeon-title h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .accordeon-input:checked ~ .accordeon-title {
+    background-color: rgb(255, 245, 190);
+  }
+  
+  .accordeon-item:focus > [class^="accordeon"] {
+    display: block;
+    visibility: visible;
+    transition: display 0.7s ease;
+  }
+  
+  .accordeon-item:focus > [class^="accordeon"] > div > .img{
+    width: 20%;
+    transition: width 1.5s ease;
+  }
+  
+  .accordeon-input:checked ~ .accordeon-img > div > .img{
+    width: 75%;
+  }
+  
+  .img {
+    width: 0%;
+    transition: width 1.5s ease;
+  }
+  
+  .x {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .accordeon:focus > .accordeon-item > .accordeon-title > div > [class^="x"] {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+  }
+  
+  .accordeon:focus > .accordeon-item > .accordeon-input:checked ~ .accordeon-title > div > [class^="x"] {
+    opacity: 1;
+    rotate: 0deg;
+    transition: rotate 0.7s ease;
+  }
+  
+  .accordeon:focus > .accordeon-item:hover > [class^="accordeon"] > div > [class^="x"] {
+    opacity: 1;
+    rotate: 0deg;
+    transition: rotate 0.7s ease;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    color: rgb(0, 158, 0);
+  }
+  
+  .accordeon {
+    max-width: 80vw;
+    margin: 1vh auto;
+  }
+  
+  .accordeon:focus {
+    color:black;
+    transition: color 0.7s ease;
+  }
+  
+  .accordeon h1 {
+    font-size: 2.5rem;
+    color: rgb(0, 158, 0);
+    margin: 0.7rem;
+  }
+  
+  .accordeon-item {
+    margin: 0.1rem;
+  }
+  
+  .accordeon-item:hover {
+    cursor: none;
+    margin: 0.1rem;
+  }
+  
+  .accordeon-title {
+    padding: 0.7rem 1.0rem;
+    cursor: none;
+  }
+  
+  .accordeon-title h2{
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .accordeon-img {
+    padding: 0.7rem 1.0rem;
+    visibility: hidden;
+  }
+  
+  .accordeon-input:checked ~ .accordeon-title {
+    background-color: rgb(195, 255, 195);
+  }
+  
+  .accordeon-item:focus > [class^="accordeon"] {
+    visibility: visible;
+    transition: none;
+  }
+  
+  .accordeon-item:focus > [class^="accordeon"] > div > .img{
+    width: 20%;
+    transition: none;
+  }
+  
+  .accordeon-input:checked ~ .accordeon-img > div > .img{
+    width: 80%;
+    transition: width 1.5s ease;
+  }
+  
+  .img {
+    width: 0%;
+    transition: width 1.5s ease;
+  }
+  
+  .x {
+    height: 1.0rem;
+    width: 1.0rem;
+  }
+  
+  .accordeon:focus > .accordeon-item > .accordeon-title > div > [class^="x"] {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+  }
+  
+  .accordeon:focus > .accordeon-item > .accordeon-input:checked ~ .accordeon-title > div > [class^="x"] {
+    opacity: 1;
+    rotate: 0deg;
+    transition: rotate 0.7s ease;
+  }
+  
+  .accordeon:focus > .accordeon-item:hover > [class^="accordeon"] > div > [class^="x"] {
+    opacity: 1;
+    rotate: 0deg;
+    transition: rotate 0.7s ease;
+  }
+}
